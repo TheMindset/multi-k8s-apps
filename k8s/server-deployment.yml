@@ -26,7 +26,7 @@ spec:
               value: postgres
             - name: PGHOST
               value: postgres-cluster-ip-service
-            - name: PG_PORT
+            - name: PGPORT
               value: '5432' # must be setting as a string
             - name: PGDATABASE
               value: postgres
