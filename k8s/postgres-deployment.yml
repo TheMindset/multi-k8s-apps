@@ -27,7 +27,7 @@ spec:
               subPath: postgres # Specific config for PostgreSQL. More info "Video 242"
           env:
             # kubectl create secret generic pgpassword --from-literal=PGPASSWORD=postgres
-            name: POSTGRES_PASSWORD # From the prostgreSQL image doc
+            - name: POSTGRES_PASSWORD # From the prostgreSQL image doc
               valueFrom:
                 secretKeyRef:
                   name: pgpassword # refer to the "NAME" pgpassword

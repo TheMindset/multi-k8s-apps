@@ -21,17 +21,17 @@ spec:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
             - name: REDIS_PORT
-              value: 6379
+              value: '6379' # must be setting as a string
             - name: PGUSER
               value: postgres
             - name: PGHOST
               value: postgres-cluster-ip-service
             - name: PG_PORT
-              value: 5432
+              value: '5432' # must be setting as a string
             - name: PGDATABASE
               value: postgres
               # kubectl create secret generic pgpassword --from-literal=PGPASSWORD=postgres
-            - name: PGPASSWORD From the prostgreSQL image doc
+            - name: PGPASSWORD # From the prostgreSQL image doc
               valueFrom:
                 secretKeyRef:
                   name: pgpassword # refer to the "NAME" pgpassword
