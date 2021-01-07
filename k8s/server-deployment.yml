@@ -30,3 +30,9 @@ spec:
               value: 5432
             - name: PGDATABASE
               value: postgres
+              # kubectl create secret generic pgpassword --from-literal=PGPASSWORD=postgres
+            - name: PGPASSWORD From the prostgreSQL image doc
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword # refer to the "NAME" pgpassword
+                  key: PGPASSWORD # refer to "KEY" PGPASSWORD

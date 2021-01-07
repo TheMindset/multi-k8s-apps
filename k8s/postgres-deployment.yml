@@ -25,3 +25,10 @@ spec:
             - name: postgres-storage # The name of the specific Volume
               mountPath: /var/lib/postgresql/data
               subPath: postgres # Specific config for PostgreSQL. More info "Video 242"
+          env:
+            # kubectl create secret generic pgpassword --from-literal=PGPASSWORD=postgres
+            name: POSTGRES_PASSWORD # From the prostgreSQL image doc
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword # refer to the "NAME" pgpassword
+                  key: PGPASSWORD # refer to "KEY" PGPASSWORD
